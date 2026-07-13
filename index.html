@@ -20,8 +20,6 @@ background:#000;
 overflow-x:hidden;
 }
 
-/* Background */
-
 .hero{
 background:
 linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.75)),
@@ -31,16 +29,13 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* Glass */
-
 .glass{
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
 border:1px solid rgba(255,255,255,.15);
 box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
-
-/* Buttons */
 
 .btn{
 transition:.35s;
@@ -51,19 +46,28 @@ transform:translateY(-4px);
 box-shadow:0 15px 35px rgba(255,255,255,.2);
 }
 
-/* Floating */
-
 .float{
 animation:float 5s ease-in-out infinite;
 }
 
 @keyframes float{
+
 0%,100%{
-transform:translateY(0px);
+transform:translateY(0);
 }
+
 50%{
 transform:translateY(-10px);
 }
+
+}
+
+@media(max-width:768px){
+
+.hero{
+background-attachment:scroll;
+}
+
 }
 
 </style>
@@ -72,30 +76,28 @@ transform:translateY(-10px);
 
 <body class="text-white">
 
-<section class="hero min-h-screen flex items-center justify-center px-6">
+<section class="hero min-h-screen flex items-center justify-center px-4 sm:px-6 py-10">
 
-<div class="max-w-5xl w-full">
+<div class="max-w-6xl w-full mx-auto">
 
 <div class="text-center">
 
-<!-- LOGO -->
-
 <img src="Logo transparent.png"
-class="w-28 mx-auto mb-6 float">
+class="w-20 sm:w-24 md:w-28 mx-auto mb-6 float">
 
-<h1 class="text-5xl md:text-6xl font-black">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-black">
 Voyo Lanka
 </h1>
 
-<p class="text-green-400 text-xl mt-2 tracking-widest">
+<p class="text-green-400 text-sm sm:text-lg md:text-xl mt-2 tracking-[0.3em] uppercase">
 Explore • Experience • Remember
 </p>
 
-<h2 class="text-4xl font-bold mt-10">
+<h2 class="text-3xl sm:text-4xl font-bold mt-10">
 ⭐ Share Your Experience
 </h2>
 
-<p class="text-gray-300 mt-5 max-w-2xl mx-auto text-lg leading-8">
+<p class="text-gray-300 mt-5 max-w-2xl mx-auto text-base sm:text-lg leading-8 px-2">
 
 Thank you for choosing Voyo Lanka.
 
@@ -103,13 +105,11 @@ Your review helps us grow as a local Sri Lankan travel company and helps future 
 
 </p>
 
-</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
 
-<div class="grid md:grid-cols-2 gap-8 mt-16">
+<!-- GOOGLE CARD -->
 
-<!-- GOOGLE -->
-
-<div class="glass rounded-3xl p-10 text-center">
+<div class="glass rounded-3xl p-8 text-center">
 
 <div class="text-6xl">
 ⭐
@@ -120,9 +120,7 @@ Google Reviews
 </h2>
 
 <p class="text-gray-300 mt-5">
-
 Share your experience with thousands of travellers on Google.
-
 </p>
 
 <div class="text-yellow-400 text-2xl mt-5">
@@ -131,7 +129,7 @@ Share your experience with thousands of travellers on Google.
 
 <a href="https://g.page/r/CWs6Al_2Y-FwEBM/review"
 target="_blank"
-class="btn inline-block mt-8 bg-white text-black font-bold px-8 py-4 rounded-full">
+class="btn inline-flex justify-center items-center mt-8 bg-white hover:bg-gray-200 text-black font-bold px-8 py-4 rounded-full">
 
 Leave a Google Review
 
@@ -139,47 +137,48 @@ Leave a Google Review
 
 </div>
 
-<!-- TRIPADVISOR -->
 
-<div class="glass rounded-3xl p-10 text-center">
+    <!-- TRIPADVISOR CARD -->
 
-    <div class="text-6xl">
-        🌍
-    </div>
+<div class="glass rounded-3xl p-8 text-center">
 
-    <h2 class="text-3xl font-bold mt-4">
-        TripAdvisor
-    </h2>
+<div class="text-6xl">
+🌍
+</div>
 
-    <p class="text-gray-300 mt-5">
-        Help future travellers discover Voyo Lanka by sharing your experience on TripAdvisor.
-    </p>
+<h2 class="text-3xl font-bold mt-4">
+TripAdvisor
+</h2>
 
-    <div class="text-green-400 text-2xl mt-5">
-        ★★★★★
-    </div>
+<p class="text-gray-300 mt-5">
+Help future travellers discover Voyo Lanka by sharing your experience on TripAdvisor.
+</p>
 
-    <a href="https://www.tripadvisor.com/UserReviewEdit-g293961-d34516234-Voyo_Lanka_Taxi_Tours-Negombo_Western_Province.html"
-       target="_blank"
-       class="btn inline-block mt-8 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-full">
+<div class="text-green-400 text-2xl mt-5">
+★★★★★
+</div>
 
-        Leave a TripAdvisor Review
+<a href="https://www.tripadvisor.com/UserReviewEdit-g293961-d34516234-Voyo_Lanka_Taxi_Tours-Negombo_Western_Province.html"
+target="_blank"
+class="btn inline-flex justify-center items-center mt-8 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-full">
 
-    </a>
+Leave a TripAdvisor Review
+
+</a>
+
+</div>
 
 </div>
 
 <!-- THANK YOU -->
 
-<!-- THANK YOU -->
-
-<div class="glass rounded-3xl mt-16 p-10 text-center md:col-span-2">
+<div class="glass rounded-3xl mt-16 p-8 md:p-10 text-center max-w-5xl mx-auto">
 
 <h2 class="text-3xl font-bold">
 ❤️ Thank You
 </h2>
 
-<p class="text-gray-300 mt-5 text-lg leading-8 max-w-3xl mx-auto">
+<p class="text-gray-300 mt-5 text-base sm:text-lg leading-8 max-w-3xl mx-auto">
 
 Every review helps our small local business reach more travellers around the world.
 
@@ -192,7 +191,9 @@ We truly appreciate your support and hope to welcome you back to beautiful Sri L
 </div>
 
 </div>
-</div>
+
+    </div>
+
 </section>
 
 </body>
